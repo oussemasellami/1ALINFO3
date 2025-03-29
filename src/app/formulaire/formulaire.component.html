@@ -1,0 +1,62 @@
+
+<div class="container">
+<form [formGroup]="formadd">
+
+    <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text">Id</span>
+        </div>
+        <input type="text" aria-label="First name" class="form-control" formControlName="id">
+      </div>
+
+      <div class=" alert alert-danger" *ngIf="id?.invalid &&  id?.touched">
+        <!--<div class=" alert alert-danger" *ngIf="formadd.get('id')?.invalid &&  formadd.get('id')?.touched">-->
+        votre id est invalid
+      </div>
+      <br>
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text">Name</span>
+        </div>
+        <input type="text" aria-label="First name" class="form-control" formControlName="name">
+   
+      </div>
+      <div class=" alert alert-danger" *ngIf="formadd.get('name')?.invalid &&  formadd.get('name')?.touched">
+        max length est 10
+      </div>
+      <br>
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text">Address</span>
+        </div>
+        <input type="text" aria-label="First name" class="form-control" formControlName="address">
+   
+      </div>
+      <div class=" alert alert-danger" *ngIf="formadd.get('address')?.errors?.['minlength']">
+       l'adress comm par Az
+      </div>
+      <br>
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text">Image</span>
+        </div>
+        <input type="text" aria-label="First name" class="form-control" formControlName="image">
+   
+      </div>
+      <br>
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text">Status</span>
+        </div>
+        <input type="text" aria-label="First name" class="form-control" formControlName="status">
+   
+      </div>
+      <div class=" alert alert-danger" *ngIf="formadd.get('status')?.invalid &&  formadd.get('status')?.touched ">
+       votre status incorrect
+       </div>
+
+      <br>
+<button type="submit" class="btn btn-primary" (click)="addresidence()" [disabled]="formadd.invalid">Save</button>
+      
+</form>
+</div>

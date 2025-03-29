@@ -4,6 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { ResidenceComponent } from './residence/residence.component';
 import { NotfoundComponent } from './notfound/notfound.component';
+import { FormulaireComponent } from './formulaire/formulaire.component';
 
 
 
@@ -11,6 +12,7 @@ const r:Routes=[
 {path:"",redirectTo:"residence",pathMatch:"full"},
   {path:"home" ,component:HomeComponent},
   {path:"residence",component:ResidenceComponent},
+  {path:"addresidence",component:FormulaireComponent},
  // {path:"**",component:NotfoundComponent}
   
 ]
