@@ -38,6 +38,7 @@
       <h5 class="card-title">{{i.status}}</h5>
       <p class="card-text">{{i.address}}</p>
       <a href="#" class="btn btn-primary" (click)="showlocation(i)" >show location</a>
+      <button class="btn btn-success" (click)="addtofavorie(i)" >{{ isliked(i) ? "unlike" : "like"}}</button>
     </div>
   </div>
 </div>

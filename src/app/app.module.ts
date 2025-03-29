@@ -7,17 +7,30 @@ import { HomeComponent } from './home/home.component';
 import { FooterComponent } from './footer/footer.component';
 import {FormsModule} from '@angular/forms';
 import { ResidenceComponent } from './residence/residence.component'
+import{RouterModule, Routes} from '@angular/router';
+import { NotfoundComponent } from './notfound/notfound.component';
+import { AppRoutingModule } from './app-routing.module';
+import { AnnonceComponent } from './annonce/annonce.component';
+import { ListannonceComponent } from './annonce/listannonce/listannonce.component'
+import { AnnonceModule } from './annonce/annonce.module';
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     HomeComponent,
     FooterComponent,
-    ResidenceComponent
+    ResidenceComponent,
+    NotfoundComponent,
+    
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    AppRoutingModule,
+    AnnonceModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -9,7 +9,7 @@ import { Residence } from 'src/core/models/residence';
 export class ResidenceComponent {
 
 searchname=""
-
+listfavoris:Residence[]=[]
   listResidences:Residence[]=[
     {id:1,"name": "El fel","address":"Borj Cedria", "image":"../../assets/images/residence1.jpg", status: "Disponible"},
      {id:2,"name": "El yasmine", "address":"Ezzahra","image":"../../assets/images/residence2.jpg", status: "Disponible" },
@@ -28,5 +28,21 @@ searchname=""
 
    searchbyname(){
     return this.listResidences.filter(r=>r.name.toLowerCase().includes(this.searchname.toLowerCase()))
+   }
+
+   addtofavorie(res:Residence){
+
+    const index =this.listfavoris.findIndex(r=>r.id==res.id)
+    if( index >-1){
+this.listfavoris.splice(index,1)
+    }else{
+      this.listfavoris.push(res)
+      console.log('liste favorie: '+JSON.stringify(this.listfavoris))
+    }
+
+   }
+
+   isliked(res:Residence){
+    return this.listfavoris.some(r=>r.id==res.id)
    }
 }
