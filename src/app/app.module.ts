@@ -14,7 +14,8 @@ import { AnnonceComponent } from './annonce/annonce.component';
 import { ListannonceComponent } from './annonce/listannonce/listannonce.component'
 import { AnnonceModule } from './annonce/annonce.module';
 import { FormulaireComponent } from './formulaire/formulaire.component';
-
+import {HttpClientModule} from '@angular/common/http';
+import { UpdateComponent } from './update/update.component'
 
 
 @NgModule({
@@ -26,6 +27,7 @@ import { FormulaireComponent } from './formulaire/formulaire.component';
     ResidenceComponent,
     NotfoundComponent,
     FormulaireComponent,
+    UpdateComponent,
     
   ],
   imports: [
@@ -33,7 +35,8 @@ import { FormulaireComponent } from './formulaire/formulaire.component';
     FormsModule,
     AppRoutingModule,
     AnnonceModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
